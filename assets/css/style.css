@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: white;
+    font-size: 30px
+}
+
+figure {
+    margin: 0;
+    padding:0;
+}
+
+.container {
+    width: 860px;
+    margin: auto auto;
+}
+
+#sentence-board {
+    max-width: 860px;
+    min-height: 80px;
+    border: 1px solid gray;
+    text-align: center;
+    margin: 50px 0;
+    font-size:40px;   
+}
+
+img {
+    max-width: 100%;
+}
+
+#hangman {
+    min-height: 256px;
+    border: 1px solid gray;
+    text-align: center;
+}
+
+#alphabet {
+    min-height: 260px;
+    border: 1px solid gray;
+}
