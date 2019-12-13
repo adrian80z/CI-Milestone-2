@@ -24,4 +24,20 @@ function writeSentence(){
 }
 
 //shows sentence after page load
-window.onload = writeSentence;
+window.onload = showGameBoard;
+
+
+function showGameBoard() {
+
+    //generating divs for letters
+    var trescDiva = "";
+
+    for(i=0; i<25; i++) {
+        trescDiva = trescDiva + '<div class="letter">A</div>';
+    } 
+    document.getElementById("alphabet").innerHTML = trescDiva;
+    writeSentence();
+
+    
+}
+
