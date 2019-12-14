@@ -26,6 +26,7 @@ function writeSentence(){
 //shows sentence after page load
 window.onload = showGameBoard;
 
+var alphabet = ["A", "B","C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O","P","Q", "R", "S", "T","U","V", "W", "X", "Y", "Z"];
 
 function showGameBoard() {
 
@@ -33,7 +34,10 @@ function showGameBoard() {
     var trescDiva = "";
 
     for(i=0; i<25; i++) {
-        trescDiva = trescDiva + '<div class="letter">A</div>';
+        trescDiva = trescDiva + '<div class="letter">'+ alphabet[i] +'</div>';
+        if((i+1) % 5 == 0) {
+            trescDiva = trescDiva + '<div style="clear:both;"</div>';
+        }
     } 
     document.getElementById("alphabet").innerHTML = trescDiva;
     writeSentence();
