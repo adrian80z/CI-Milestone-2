@@ -56,12 +56,27 @@ String.prototype.insertLetter = function(index, letter) {
 
 
 function checkLetter(num){
+
+    //setting boolean flag to false
+    var correctLetter = false;
+
     for(i = 0; i < sentenceLenth; i++){
         if(sentence.charAt(i) == alphabet[num]){
             hiddenSentence = hiddenSentence.insertLetter(i, alphabet[num]);
+            // change flag to true if letter is found in sentence
+            correctLetter = true;
         } 
     }
-    writeSentence();
+
+    if(correctLetter == true) {
+        var boxNumber = "box" + num;
+        document.getElementById(boxNumber).classList.add("correct");
+        writeSentence();
+    } else {
+        var boxNumber = "box" + num;
+        document.getElementById(boxNumber).classList.add("incorrect");
+    }
+    
 }
 
  
