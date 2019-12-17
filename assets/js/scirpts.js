@@ -38,15 +38,30 @@ function showGameBoard() {
         //variable for storing id number for each box element
         var boxNumber = "box" + i;
 
-        boxContent = boxContent + '<div class="letter" id="' + boxNumber + '">'+ alphabet[i] +'</div>';
+        boxContent = boxContent + '<div class="letter" id="' + boxNumber + '" onclick="checkLetter('+ i +')">'+ alphabet[i] +'</div>';
+        //break line after every fifth element
         if((i+1) % 5 == 0) {
-            boxContent = boxContent + '<div style="clear:both;"</div>';
+            boxContent = boxContent + '<br />';
         }
     } 
     
     document.getElementById("alphabet").innerHTML = boxContent;
-    writeSentence();
-
-    
+    writeSentence();  
 }
 
+//add custom method insertLetter() to String Class Object using prototype property
+String.prototype.insertLetter = function(index, letter) {
+    return this.substr(0, index) + letter + this.substr(index + 1);
+}
+
+
+function checkLetter(num){
+    for(i = 0; i < sentenceLenth; i++){
+        if(sentence.charAt(i) == alphabet[num]){
+            hiddenSentence = hiddenSentence.insertLetter(i, alphabet[num]);
+        } 
+    }
+    writeSentence();
+}
+
+ 
