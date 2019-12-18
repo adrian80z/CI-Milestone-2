@@ -1,4 +1,4 @@
-var sentence = "Better late than never";
+var sentence = "Better";
 
 //change sentence to uppercase letters
 sentence = sentence.toUpperCase();
@@ -48,7 +48,8 @@ function showGameBoard() {
     } 
     
     document.getElementById("alphabet").innerHTML = boxContent;
-    writeSentence();  
+    writeSentence(); 
+    drawBase(); 
 }
 
 //add custom method insertLetter() to String Class Object using prototype property
@@ -73,6 +74,7 @@ function checkLetter(num){
     if(correctLetter == true) {
         var boxNumber = "box" + num;
         document.getElementById(boxNumber).classList.add("correct");
+        //update game state
         writeSentence();
     } else {
         var boxNumber = "box" + num;
@@ -88,14 +90,32 @@ function checkLetter(num){
 
     //win
     if(sentence == hiddenSentence){
-        document.getElementById("alphabet").innerHTML = 'You Won!!! <br/><br/><span class="reset" onclick="location.reload()">Play Again?</span>';
+        document.getElementById("alphabet").innerHTML = 'You Won!!! <br/><br/><span class="reset" onclick="window.location.reload()">Play Again?</span>';
     }
 
-    //fail
-    if(incorrectTurns >= 9) {
-        document.getElementById("alphabet").innerHTML = 'Game Over!!! <br/> Correct sentence is: '+ sentence +' <br/><br/><span class="reset" onclick="location.reload()">Play Again?</span>';
+    //game over
+    if(incorrectTurns == 8) {
+        document.getElementById("message").innerHTML = "You've last chance to guess!!!";
     }
-    
+
+    else if(incorrectTurns >= 9) {
+        document.getElementById("message").style.display="none";
+        document.getElementById("alphabet").innerHTML = 'Game Over!!! <br/> Correct sentence is: '+ sentence +' <br/><br/><span class="reset" onclick="window.location.reload()">Play Again?</span>';
+    }  
 }
+
+    function drawBase(){
+        var drawLine = document.getElementById("drawGibbet");
+        var ctx = drawLine.getContext('2d');
+
+        ctx.fillStyle = "#CECCCC";
+        ctx.lineWidth=3;
+        ctx.fillRect(0, 0, 300, 300);
+       
+        ctx.beginPath(); //ground
+            ctx.moveTo(35,270);
+            ctx.lineTo(265,270);
+            ctx.stroke();
+    }
 
  
