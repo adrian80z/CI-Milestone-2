@@ -84,8 +84,6 @@ function checkLetter(num){
         document.getElementById(boxNumber).setAttribute("onclick", "null");
       
         incorrectTurns++;
-        var image= "assets/images/" + incorrectTurns + ".png";
-        document.getElementById("hangman").innerHTML = '<img src="' + image + '" alt=""/>'
     }
 
     //win
@@ -97,6 +95,46 @@ function checkLetter(num){
     if(incorrectTurns == 8) {
         document.getElementById("message").innerHTML = "You've last chance to guess!!!";
     }
+
+    var drawOnCanvas = document.getElementById("drawGibbet");
+    var ctx = drawOnCanvas.getContext('2d');
+
+    
+    if(incorrectTurns==1){
+        ctx.lineWidth = 20;
+        ctx.beginPath(); //vertical bar
+        ctx.moveTo(50,270);
+        ctx.lineTo(50,25);
+        ctx.stroke();
+    }
+
+    if(incorrectTurns==2){
+        ctx.lineWidth = 20;
+        ctx.beginPath(); //horizontal bar
+        ctx.moveTo(29,25);
+        ctx.lineTo(175,25);
+        ctx.stroke();  
+    }
+
+    if(incorrectTurns==3){
+        ctx.lineWidth = 10;
+        ctx.beginPath(); //cross bar
+        ctx.moveTo(50,80);
+        ctx.lineTo(100,25);
+        ctx.stroke(); 
+    }
+
+    if(incorrectTurns==4){
+        ctx.lineWidth = 5;
+        ctx.beginPath(); //line
+        ctx.moveTo(150,30);
+        ctx.lineTo(150,80);
+        ctx.stroke();
+    }
+
+
+
+
 
     else if(incorrectTurns >= 9) {
         document.getElementById("message").style.display="none";
