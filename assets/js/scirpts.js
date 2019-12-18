@@ -85,6 +85,16 @@ function checkLetter(num){
         var image= "assets/images/" + incorrectTurns + ".png";
         document.getElementById("hangman").innerHTML = '<img src="' + image + '" alt=""/>'
     }
+
+    //win
+    if(sentence == hiddenSentence){
+        document.getElementById("alphabet").innerHTML = 'You Won!!! <br/><br/><span class="reset" onclick="location.reload()">Play Again?</span>';
+    }
+
+    //fail
+    if(incorrectTurns >= 9) {
+        document.getElementById("alphabet").innerHTML = 'Game Over!!! <br/> Correct sentence is: '+ sentence +' <br/><br/><span class="reset" onclick="location.reload()">Play Again?</span>';
+    }
     
 }
 
