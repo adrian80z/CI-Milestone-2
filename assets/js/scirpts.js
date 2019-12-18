@@ -9,6 +9,8 @@ var sentenceLenth = sentence.length;
 //creating variable to keep hidden sequence
 var hiddenSentence = "";
 
+var incorrectTurns = 0;
+
 //looping through string and replacing letters and spaces adequately
 for(i = 0; i < sentenceLenth; i++){
     if(sentence.charAt(i) == " ") {
@@ -33,14 +35,14 @@ function showGameBoard() {
     //generating divs for letters
     var boxContent = "";
 
-    for(i=0; i<25; i++) {
+    for(i=0; i<26; i++) {
 
         //variable for storing id number for each box element
         var boxNumber = "box" + i;
 
         boxContent = boxContent + '<div class="letter" id="' + boxNumber + '" onclick="checkLetter('+ i +')">'+ alphabet[i] +'</div>';
-        //break line after every fifth element
-        if((i+1) % 5 == 0) {
+        //break line after every seventh element
+        if((i+1) % 7 == 0) {
             boxContent = boxContent + '<br />';
         }
     } 
@@ -75,6 +77,13 @@ function checkLetter(num){
     } else {
         var boxNumber = "box" + num;
         document.getElementById(boxNumber).classList.add("incorrect");
+
+        //deactivate onclick function after letter is clicked
+        document.getElementById(boxNumber).setAttribute("onclick", "null");
+      
+        incorrectTurns++;
+        var image= "assets/images/" + incorrectTurns + ".png";
+        document.getElementById("hangman").innerHTML = '<img src="' + image + '" alt=""/>'
     }
     
 }
