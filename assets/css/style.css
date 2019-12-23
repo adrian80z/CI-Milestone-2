@@ -1,3 +1,4 @@
+/* general styling*/
 body {
     margin: 0;
     padding: 0;
@@ -8,15 +9,42 @@ body {
     font-weight: bold;
 }
 
-figure {
-    margin: 0;
-    padding:0;
-}
-
 .container {
-    width: 860px;
+    max-width: 860px;
     margin: auto auto;
 }
+
+/* index page */
+.intro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 300px;
+    min-height: 500px;
+    text-align: center;
+    background-color: #fff;
+    padding: 30px;
+}
+
+.intro-button {
+    background-color: #413d39;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    padding: 14px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .2s all linear;
+    letter-spacing: 1px;
+    outline: none;
+    display: block;
+    margin: 30px auto 30px auto;
+    width: 250px;
+    cursor: pointer;
+}
+
+/* gameboard page */
 
 #sentence-board {
     max-width: 860px;
@@ -25,7 +53,7 @@ figure {
     border: 1px solid gray;
     text-align: center;
     margin: 50px 0;
-    font-size:40px;   
+    font-size: 40px;
 }
 
 img {
@@ -58,7 +86,7 @@ img {
 }
 
 .letter:hover {
-    
+
     color: gray;
     border: 2px solid gray;
 }
