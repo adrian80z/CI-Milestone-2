@@ -5,6 +5,17 @@ var proverbs = ["A bad workman always blames his tools", "A bird in hand is wort
     "A cat has nine lives", "Actions speak louder than words", "All good things come to an end"
 ];
 
+
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+var playerChoice = getUrlVars()["id"];
+
 var wordsBank = [];
 
 //selecting appropriate words array from user choice and assign it to wordsBank array
@@ -14,7 +25,7 @@ if (playerChoice === 'easy') {
 } else if (playerChoice === 'hard') {
     wordsBank = wordsHard;
 
-} else if (playerChoice === 'impossible') {
+} else if (playerChoice === 'proverbs') {
     wordsBank = proverbs;
 };
 
