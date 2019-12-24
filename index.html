@@ -8,7 +8,6 @@
     <title>Hangman Game</title>
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css" />
-    <script src="assets/js/scripts.js"></script>
 </head>
 
 <body>
@@ -18,16 +17,34 @@
             <div id="start">
                 <button class="menu-button" id="play">Start Game</button>
                 <button class="menu-button" id="howTo">How To Play</button>
+                <div id="howToModal" class="modal-box">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span id="close">&times;</span>
+                            <h2>Hangman</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>Hangman is a simple word guessing game. Player try to figure out an unknown word by
+                                guessing letters.</p>
+                            <p>The game is setup by drawing a base for a gallow and a underline for each letter in the
+                                unknown word. As letters in the word are guessed, write them above the cooresponding
+                                underline. If a letter not in the word is guess, draw a picture of a person on the
+                                gallow–one part for each incorrect letter guess. You are given 9 wrong guesses before
+                                you lose and hang ;)</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-        <section id="category" class="menu-box">
-            <p>Select Difficulty</p>
-            <button class="menu-button" id="easy">Easy</button>
-            <button class="menu-button" id="medium">Medium</button>
-            <button class="menu-button" id="hard">Hard</button>
+        <section id="category" class="menu-box hide">
+            <h3>Levels</h3>
+            <a href="gameboard.html"><button class="menu-button" id="easy">Easy</button></a>
+            <a href="gameboard.html"><button class="menu-button" id="medium">Medium</button></a>
+            <a href="gameboard.html"><button class="menu-button" id="hard">Hard</button></a>
             <button class="menu-button" id="menu">Main Menu</button>
         </section>
     </div>
+    <script src="assets/js/events.js"></script>
 </body>
 
 </html>
