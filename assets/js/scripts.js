@@ -140,7 +140,7 @@ function checkLetter(num) {
     }
 
     //fail - every missed letter one part of gibbet and person is drawn
-    var drawOnCanvas = document.getElementById("drawGibbet");
+    var drawOnCanvas = document.getElementById("draw-gibbet");
     var ctx = drawOnCanvas.getContext('2d');
 
 
@@ -206,7 +206,7 @@ function checkLetter(num) {
 
     if (incorrectTurns == 7) {
         ctx.lineWidth = 3;
-        ctx.fillStyle = "#CECCCC";
+        ctx.fillStyle = "white";
         ctx.fillRect(138, 102, 24, 12); //cover mouth
         ctx.beginPath(); //straight mouth
         ctx.moveTo(140, 108);
@@ -279,10 +279,10 @@ function checkLetter(num) {
 
 //function drawing base line where gibbet will be drawn
 function drawBase() {
-    var drawLine = document.getElementById("drawGibbet");
+    var drawLine = document.getElementById("draw-gibbet");
     var ctx = drawLine.getContext('2d');
 
-    ctx.fillStyle = "#CECCCC";
+    ctx.fillStyle = "transparent";
     ctx.lineWidth = 3;
     ctx.fillRect(0, 0, 300, 300);
 
