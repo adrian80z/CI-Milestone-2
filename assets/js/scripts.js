@@ -1,24 +1,40 @@
+//vars declarations and initialization
+var wordsEasy = [];
+var wordsHard = [];
+var prowerbs = [];
+var playerChoice = "";
+var wordsBank = [];
+var getRandomSentence = 0;
+var sentence = "";
+var sentenceLength = 0;
+var hiddenSentence = "";
+var incorrectTurns = 0;
+var alphabet = "";
+
+//display content after page load
+window.onload = showGameBoard;
+
 //arrays with words with different difficulty level
-var wordsEasy = ["apple", "artist", "arrow", "afro", "apollo", "answer", "awesome", "anniversary", "writer"];
-var wordsHard = ["aardvark", "aardvarks", "abacterial", "basil", "basin", "basinet", "basinets", "basins", "basketweaves", "basketwork", "basketworks", "basking", "basks", "compactifies", "compactify", "yo"];
-var proverbs = ["A bad workman always blames his tools", "A bird in hand is worth two in the bush",
+wordsEasy = ["apple", "artist", "arrow", "afro", "apollo", "answer", "awesome", "anniversary", "writer"];
+wordsHard = ["aardvark", "aardvarks", "abacterial", "basil", "basin", "basinet", "basinets", "basins", "basketweaves", "basketwork", "basketworks", "basking", "basks", "compactifies", "compactify", "yo"];
+proverbs = ["A bad workman always blames his tools", "A bird in hand is worth two in the bush",
     "A cat has nine lives", "Actions speak louder than words", "All good things come to an end"
 ];
 
 // code taken from https://html-online.com/articles/get-url-parameters-javascript/
 function getUrlVars() {
     var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
         vars[key] = value;
     });
     return vars;
 }
 
 //assign player choice depending on button clicked to variable
-var playerChoice = getUrlVars()["id"];
+playerChoice = getUrlVars()["id"];
 
 //variable for storing words array
-var wordsBank = [];
+wordsBank = [];
 
 //selecting appropriate words array from button clicked choice and assign it to wordsBank array
 if (playerChoice === 'easy') {
@@ -33,19 +49,17 @@ if (playerChoice === 'easy') {
 
 
 // function displays random word from words array
-var getRandomSentence = Math.floor(Math.random() * wordsBank.length);
-var sentence = wordsBank[getRandomSentence];
+getRandomSentence = Math.floor(Math.random() * wordsBank.length);
+sentence = wordsBank[getRandomSentence];
 
 //change sentence to uppercase letters
 sentence = sentence.toUpperCase();
 
 //checking the length of sentence
-var sentenceLength = sentence.length;
+sentenceLength = sentence.length;
 
-//creating variable to keep hidden sequence
-var hiddenSentence = "";
-
-var incorrectTurns = 0;
+//creating variable to keep hidden sentence
+hiddenSentence = "";
 
 //looping through string and replacing letters and spaces adequately
 for (i = 0; i < sentenceLength; i++) {
@@ -61,10 +75,7 @@ function writeSentence() {
     document.getElementById("sentence-board").innerHTML = hiddenSentence;
 }
 
-//display content after page load
-window.onload = showGameBoard;
-
-var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
 function showGameBoard() {
 
@@ -99,7 +110,7 @@ function checkLetter(num) {
     //setting boolean flag to false
     var correctLetter = false;
 
-    for (i = 0; i < sentenceLenth; i++) {
+    for (i = 0; i < sentenceLength; i++) {
         if (sentence.charAt(i) == alphabet[num]) {
             hiddenSentence = hiddenSentence.insertLetter(i, alphabet[num]);
             // change flag to true if letter is found in sentence
