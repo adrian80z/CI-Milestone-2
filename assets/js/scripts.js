@@ -1,6 +1,22 @@
-var wordsBank = ["A bad workman always blames his tools", "A bird in hand is worth two in the bush",
+//arrays with words with different difficulty level
+var wordsEasy = ["apple", "artist", "arrow", "afro", "apollo", "answer", "awesome", "anniversary", "writer"];
+var wordsHard = ["aardvark", "aardvarks", "abacterial", "basil", "basin", "basinet", "basinets", "basins", "basketweaves", "basketwork", "basketworks", "basking", "basks", "compactifies", "compactify", "yo"];
+var proverbs = ["A bad workman always blames his tools", "A bird in hand is worth two in the bush",
     "A cat has nine lives", "Actions speak louder than words", "All good things come to an end"
 ];
+
+var wordsBank = [];
+
+//selecting appropriate words array from user choice and assign it to wordsBank array
+if (playerChoice === 'easy') {
+    wordsBank = wordsEasy;
+
+} else if (playerChoice === 'hard') {
+    wordsBank = wordsHard;
+
+} else if (playerChoice === 'impossible') {
+    wordsBank = proverbs;
+};
 
 var getRandomSentence = Math.floor(Math.random() * wordsBank.length);
 var sentence = wordsBank[getRandomSentence];
