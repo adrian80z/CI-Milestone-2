@@ -2,15 +2,10 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: rgb(206, 204, 204);
     user-select: none;
     font-family: 'IBM Plex Mono', monospace;
     font-weight: bold;
-}
-
-.container {
-    max-width: 860px;
-    margin: auto auto;
+    box-sizing: border-box;
 }
 
 /* index page */
@@ -130,40 +125,19 @@ body {
     padding: 2px 16px;
 }
 
-
-
-
-.container {
-    width: 40%;
-    min-height: 500px;
-    margin-top: 200px;
-}
-
 /* gameboard page */
-
 #sentence-board {
-    max-width: 860px;
-    min-height: 50px;
     padding: 20px 0;
-    border: 1px solid gray;
     text-align: center;
-    margin: 50px 0;
     font-size: 40px;
 }
 
-img {
-    max-width: 100%;
-}
-
 #hangman {
-    min-height: 256px;
-    border: 1px solid gray;
     text-align: center;
 }
 
 #alphabet {
     min-height: 260px;
-    border: 1px solid gray;
     text-align: center;
 }
 
@@ -196,4 +170,15 @@ img {
     background-color: #ff0000;
     border: 2px solid #ff0000;
     color: #fff;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+    .container {
+        max-width: 860px;
+        margin: auto auto;
+    }
+
+    #sentence-board {}
 }
