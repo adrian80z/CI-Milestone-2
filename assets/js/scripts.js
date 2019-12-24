@@ -5,7 +5,7 @@ var proverbs = ["A bad workman always blames his tools", "A bird in hand is wort
     "A cat has nine lives", "Actions speak louder than words", "All good things come to an end"
 ];
 
-
+// code taken from https://html-online.com/articles/get-url-parameters-javascript/
 function getUrlVars() {
     var vars = {};
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
@@ -14,11 +14,13 @@ function getUrlVars() {
     return vars;
 }
 
+//assign player choice depending on button clicked to variable
 var playerChoice = getUrlVars()["id"];
 
+//variable for storing words array
 var wordsBank = [];
 
-//selecting appropriate words array from user choice and assign it to wordsBank array
+//selecting appropriate words array from button clicked choice and assign it to wordsBank array
 if (playerChoice === 'easy') {
     wordsBank = wordsEasy;
 
@@ -29,6 +31,8 @@ if (playerChoice === 'easy') {
     wordsBank = proverbs;
 };
 
+
+// function displays random word from words array
 var getRandomSentence = Math.floor(Math.random() * wordsBank.length);
 var sentence = wordsBank[getRandomSentence];
 
@@ -36,7 +40,7 @@ var sentence = wordsBank[getRandomSentence];
 sentence = sentence.toUpperCase();
 
 //checking the length of sentence
-var sentenceLenth = sentence.length;
+var sentenceLength = sentence.length;
 
 //creating variable to keep hidden sequence
 var hiddenSentence = "";
@@ -44,7 +48,7 @@ var hiddenSentence = "";
 var incorrectTurns = 0;
 
 //looping through string and replacing letters and spaces adequately
-for (i = 0; i < sentenceLenth; i++) {
+for (i = 0; i < sentenceLength; i++) {
     if (sentence.charAt(i) == " ") {
         hiddenSentence = hiddenSentence + " ";
     } else {
@@ -115,6 +119,7 @@ function checkLetter(num) {
         //deactivate onclick function after letter is clicked
         document.getElementById(boxNumber).setAttribute("onclick", "null");
 
+        //missed letter counter
         incorrectTurns++;
     }
 
@@ -123,7 +128,7 @@ function checkLetter(num) {
         document.getElementById("alphabet").innerHTML = 'You Won!!! <br/><br/><span class="reset" onclick="window.location.reload()">Play Again?</span>';
     }
 
-    //fail
+    //fail - every missed letter one part of gibbet and person is drawn
     var drawOnCanvas = document.getElementById("drawGibbet");
     var ctx = drawOnCanvas.getContext('2d');
 
@@ -261,6 +266,7 @@ function checkLetter(num) {
     }
 }
 
+//function drawing base line where gibbet will be drawn
 function drawBase() {
     var drawLine = document.getElementById("drawGibbet");
     var ctx = drawLine.getContext('2d');
