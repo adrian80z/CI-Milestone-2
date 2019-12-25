@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hangman Game</title>
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css" /> 
-    <script src="assets/js/scripts.js"></script> 
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/js/scripts.js"></script>
 </head>
+
 <body>
     <div class="container">
-        <section>
+        <section class="paper-card">
             <div id="sentence-board"></div>
-            <div id="hangman">
-               <canvas id="draw-gibbet" width="300" height="300"></canvas>
+            <div class="box">
+                <div id="hangman">
+                    <canvas id="draw-gibbet" width="300" height="300"></canvas>
+                </div>
             </div>
-            <div id="message"></div>
-            <div id="alphabet">
+            <div class="box">
+                <div id="message"></div>
+                <div id="alphabet"></div>
             </div>
         </section>
-    </div>    
+    </div>
 </body>
+
 </html>
