@@ -10,6 +10,7 @@ var sentenceLength = 0;
 var hiddenSentence = "";
 var incorrectTurns = 0;
 var alphabet = "";
+var turns = 8;
 
 //display content after page load
 window.onload = showGameBoard;
@@ -130,13 +131,18 @@ function checkLetter(num) {
         //deactivate onclick function after letter is clicked
         document.getElementById(boxNumber).setAttribute("onclick", "null");
 
+        //turns counter
+        document.getElementById("lives").innerHTML = "Turns: " + turns;
+        turns--;
+
         //missed letter counter
         incorrectTurns++;
     }
 
     //win
     if (sentence == hiddenSentence) {
-        document.getElementById("alphabet").innerHTML = 'You Won!!! <br/><br/><span class="reset" onclick="window.location.reload()">Play Again?</span>';
+        document.getElementById("message").style.display = "none";
+        document.getElementById("alphabet").innerHTML = '<span class="win">Congratulations!!!<br/>Great Job!!!</span> <br/><br/><span class="reset menu-button inner" onclick="window.location.reload()">Play Again?</span><br /><span class="back-menu menu-button"><a href="index.html">Main Menu</a></span>';
     }
 
     //fail - every missed letter one part of gibbet and person is drawn
@@ -219,7 +225,7 @@ function checkLetter(num) {
     }
 
     if (incorrectTurns == 8) {
-        document.getElementById("message").innerHTML = "You've last chance to guess!!!";
+        document.getElementById("message").innerHTML = "Your last chance!!!";
 
         ctx.lineWidth = 3;
         ctx.beginPath(); //right leg
@@ -248,7 +254,7 @@ function checkLetter(num) {
 
     if (incorrectTurns == 9) {
         document.getElementById("message").style.display = "none";
-        document.getElementById("alphabet").innerHTML = 'Game Over!!! <br/> Correct sentence is: ' + sentence + ' <br/><br/><span class="reset" onclick="window.location.reload()">Play Again?</span>';
+        document.getElementById("alphabet").innerHTML = '<span class="fail">Game Over!!!</span> <br/><span class="word"> Correct word is:</span><br/> ' + sentence + ' <br/><br/><span class="reset menu-button inner" onclick="window.location.reload()">Play Again?</span><br /><span class="back-menu menu-button"><a href="index.html">Main Menu</a></span>';
 
         ctx.lineWidth = 3;
         ctx.beginPath(); //left leg
