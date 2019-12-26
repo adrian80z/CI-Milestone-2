@@ -12,6 +12,12 @@ var incorrectTurns = 0;
 var alphabet = "";
 var turns = 8;
 
+//game sounds
+var winner = new Audio("assets/sounds/tada.wav");
+var gameOver = new Audio("assets/sounds/fail.wav");
+var correctGuess = new Audio("assets/sounds/yes.wav");
+var incorrectGuess = new Audio("assets/sounds/no.wav");
+
 //display content after page load
 window.onload = showGameBoard;
 
@@ -120,11 +126,13 @@ function checkLetter(num) {
     }
 
     if (correctLetter == true) {
+        correctGuess.play();
         var boxNumber = "box" + num;
         document.getElementById(boxNumber).classList.add("correct");
         //update game state
         writeSentence();
     } else {
+        incorrectGuess.play();
         var boxNumber = "box" + num;
         document.getElementById(boxNumber).classList.add("incorrect");
 
@@ -141,6 +149,7 @@ function checkLetter(num) {
 
     //win
     if (sentence == hiddenSentence) {
+        winner.play();
         document.getElementById("message").style.display = "none";
         document.getElementById("alphabet").innerHTML = '<span class="win">Congratulations!!!<br/>Great Job!!!</span> <br/><br/><span class="reset menu-button inner" onclick="window.location.reload()">Play Again?</span><br /><span class="back-menu menu-button"><a href="index.html">Main Menu</a></span>';
     }
@@ -253,6 +262,8 @@ function checkLetter(num) {
     }
 
     if (incorrectTurns == 9) {
+        incorrectGuess.pause();
+        gameOver.play();
         document.getElementById("message").style.display = "none";
         document.getElementById("alphabet").innerHTML = '<span class="fail">Game Over!!!</span> <br/><span class="word"> Correct word is:</span><br/> ' + sentence + ' <br/><br/><span class="reset menu-button inner" onclick="window.location.reload()">Play Again?</span><br /><span class="back-menu menu-button"><a href="index.html">Main Menu</a></span>';
 
