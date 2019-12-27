@@ -11,29 +11,30 @@ body {
     background-image: url("../images/paper.png");
     background-position: top left;
     position: relative;
-    height: 100vh; 
+    height: 100vh;
 }
 
 
 
 /* index page */
+#start h1 {
+    font-size: 3.5em;
+    letter-spacing: 3px;
+}
+
 .menu-box {
-    position: absolute;
+    /* position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 300px;
-    min-height: 500px;
+    transform: translate(-50%, -50%); */
+    /* min-width: 300px;
+    min-height: 500px; */
     text-align: center;
-    background-color: #fff;
     padding: 30px;
-    background-image: url("../images/paper1.png");
-    background-size: cover;
-    background-position: center;
 }
 
 .menu-button {
-    background-color: #413d39;
+    background-image: linear-gradient(to right, #232526 0%, #414345 51%, #232526 100%);
     border-radius: 5px;
     border: none;
     color: #fff;
@@ -42,12 +43,14 @@ body {
     font-weight: bold;
     transition: .2s all linear;
     letter-spacing: 1px;
+    font-size: 1.5em;
     outline: none;
     display: block;
     margin: 30px auto 30px auto;
     width: 250px;
     cursor: pointer;
 }
+
 
 .hide {
     display: none;
@@ -147,7 +150,7 @@ body {
 #lives {
     font-size: 29px;
     font-weight: bold;
-    padding: 0 0 0 59px;
+    padding: 0 0 0 77px;
 }
 
 #hangman {
@@ -197,12 +200,14 @@ body {
     background-color: #067c06;
     border: 2px solid #067c06;
     color: #fff;
+    cursor: default;
 }
 
 .incorrect {
     background-color: #ff0000;
     border: 2px solid #ff0000;
     color: #fff;
+    cursor: default;
 }
 
 .inner {
@@ -210,6 +215,22 @@ body {
     margin: 0 auto -15px auto;
     font-size: 15px;
     width: 200px;
+}
+
+.win,
+.fail {
+    font-size: 38px;
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.win {
+    color: green;
+}
+
+.fail {
+    color: red;
 }
 
 .back-menu {
@@ -224,6 +245,25 @@ body {
     color: white;
 }
 
+@media only screen and (max-width: 420px){
+    #hangman {
+        
+    }
+
+    .letter {
+        width: 25px;
+    }
+
+    .paper-card > #lives {
+        padding: 0;
+        text-align: center;   
+    }
+
+    .win, .fail {
+        font-size: 33px;
+    }
+}
+
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
     .paper-card {
@@ -233,11 +273,11 @@ body {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50% ,-50%);
+        transform: translate(-50%, -50%);
     }
 
     #sentence-board {
-        padding: 55px 0 65px 0;
+        padding: 0 0 65px 0;
         text-align: center;
         font-size: 50px;
         letter-spacing: 5px;
@@ -246,6 +286,7 @@ body {
     .box {
         float: left;
         width: 48%;
+        min-height: 310px;
     }
 
     #hangman {
@@ -271,4 +312,5 @@ body {
 
     #alphabet {
         margin-top: -12px;
-    }}
+    }
+}
