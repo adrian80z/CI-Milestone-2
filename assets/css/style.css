@@ -17,9 +17,19 @@ body {
 
 
 /* index page */
-#start h1 {
+
+#start {
+    margin-top: 16vh;
+}
+
+#start h1,
+#category h1 {
     font-size: 3.5em;
     letter-spacing: 3px;
+}
+
+#category a {
+    text-decoration: none;
 }
 
 .menu-box {
@@ -43,14 +53,13 @@ body {
     font-weight: bold;
     transition: .2s all linear;
     letter-spacing: 1px;
-    font-size: 1.5em;
+    font-size: 1.2em;
     outline: none;
     display: block;
     margin: 30px auto 30px auto;
     width: 250px;
     cursor: pointer;
 }
-
 
 .hide {
     display: none;
@@ -66,7 +75,7 @@ body {
     display: none;
     position: fixed;
     z-index: 1;
-    padding-top: 100px;
+    padding-top: 150px;
     left: 0;
     top: 0;
     width: 100%;
@@ -133,10 +142,14 @@ body {
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
+    font-size: 2em;
 }
 
 .modal-body {
     padding: 2px 16px;
+    font-family: arial;
+    text-align: left;
+    font-size: 1.3em;
 }
 
 /* gameboard page */
@@ -151,6 +164,13 @@ body {
     font-size: 29px;
     font-weight: bold;
     padding: 0 0 0 77px;
+}
+
+#refresh {
+    position: absolute;
+    top: 0;
+    right: 76px;
+    cursor: pointer;
 }
 
 #hangman {
@@ -211,6 +231,7 @@ body {
 }
 
 .inner {
+    background-image: none;
     background-color: green;
     margin: 0 auto -15px auto;
     font-size: 15px;
@@ -245,27 +266,105 @@ body {
     color: white;
 }
 
-@media only screen and (max-width: 420px){
+/* media queries */
+@media only screen and (max-width: 375px) {
+    #lives {
+        padding: 20px 0 0 25px;
+        font-size: 20px;
+    }
+
+    #refresh {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+    }
+
+    #sentence-board {
+        padding-top: 15px;
+    }
+
     #hangman {
-        
+        transform: scale(.6);
+        margin-top: -50px;
+    }
+
+    #message {
+        margin-top: -55px;
+    }
+
+    #alphabet {
+        padding-top: 0;
+        margin-top: -20px;
+        font-size: 25px;
+    }
+
+    .win,
+    .fail {
+        font-size: 28px;
+    }
+
+    .letter {
+        width: 20px;
+    }
+}
+
+@media only screen and (min-width: 376px) and (max-width: 420px) {
+    #lives {
+        padding: 20px 0 0 25px;
+        font-size: 20px;
+    }
+
+    #refresh {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+    }
+
+    #sentence-board {
+        padding-top: 40px;
+    }
+
+    #hangman {
+        transform: scale(.70);
+        margin-top: -50px;
+    }
+
+    #message {
+        margin-top: -20px;
     }
 
     .letter {
         width: 25px;
     }
 
-    .paper-card > #lives {
-        padding: 0;
-        text-align: center;   
-    }
-
-    .win, .fail {
+    .win,
+    .fail {
         font-size: 33px;
     }
 }
 
+/* Tablets */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    #lives {
+        padding: 25px 0 0 25px;
+        font-size: 30px;
+    }
+
+    #refresh {
+        position: absolute;
+        top: 25px;
+        right: 30px;
+        transform: scale(1.5);
+    }  
+}
+
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+
+    .modal-content {
+        width: 40%;
+    }
+
     .paper-card {
         width: 100%;
         max-width: 960px;
