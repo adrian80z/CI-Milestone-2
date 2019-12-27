@@ -35,7 +35,7 @@ body {
 }
 
 .menu-button {
-    background-image: linear-gradient(to right, #232526 0%, #414345 51%, #232526 100%);
+    background-color: #2d2d2d;
     border-radius: 5px;
     border: none;
     color: #fff;
@@ -50,6 +50,10 @@ body {
     margin: 30px auto 30px auto;
     width: 250px;
     cursor: pointer;
+}
+
+.menu-button:hover {
+    background-color: #565656
 }
 
 .hide {
@@ -84,25 +88,11 @@ body {
     border: 1px solid #888;
     width: 80%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
     animation-duration: 0.4s
 }
 
 /* Add Animation - code taken from w3schools.com*/
-@-webkit-keyframes animatetop {
-    from {
-        top: -300px;
-        opacity: 0
-    }
-
-    to {
-        top: 0;
-        opacity: 1
-    }
-}
-
 @keyframes animatetop {
     from {
         top: -300px;
@@ -160,15 +150,24 @@ body {
 #refresh {
     position: absolute;
     top: 6px;
-    right: 76px;
+    right: 135px;
     cursor: pointer;
+    opacity: .7;
+    transition: .2s all linear;
+}
+
+#refresh:hover,
+#home:hover {
+    opacity: 1;
 }
 
 #home {
     position: absolute;
     top: 6px;
-    right: 130px;
+    right: 84px;
     cursor: pointer;
+    opacity: .7;
+    transition: .2s all linear;
 }
 
 #hangman {
@@ -216,24 +215,27 @@ body {
 
 .correct {
     background-color: #067c06;
-    border: 2px solid #067c06;
     color: #fff;
     cursor: default;
 }
 
 .incorrect {
     background-color: #ff0000;
-    border: 2px solid #ff0000;
     color: #fff;
     cursor: default;
 }
 
 .inner {
     background-image: none;
-    background-color: green;
+    background-color:#376f32;
     margin: 0 auto -15px auto;
+    transition: .2s all linear;
     font-size: 15px;
     width: 200px;
+}
+
+.inner:hover {
+    background-color: #5b9452;
 }
 
 .win,
@@ -253,7 +255,6 @@ body {
 }
 
 .back-menu {
-    background-color: gray;
     margin: 0 auto;
     font-size: 15px;
     width: 200px;
@@ -274,13 +275,13 @@ body {
     #refresh {
         position: absolute;
         top: 15px;
-        right: 25px;
+        right: 80px;
     }
 
     #home {
         position: absolute;
         top: 15px;
-        right: 80px;
+        right: 25px;
     }
 
     #sentence-board {
@@ -337,13 +338,13 @@ body {
     #refresh {
         position: absolute;
         top: 15px;
-        right: 25px;
+        right: 80px;
     }
 
     #home {
         position: absolute;
         top: 15px;
-        right: 80px;
+        right: 25px;  
     }
 
     #sentence-board {
