@@ -22,11 +22,9 @@ var incorrectGuess = new Audio("assets/sounds/no.wav");
 window.onload = showGameBoard;
 
 //arrays with words with different difficulty level
-wordsEasy = ["apple", "artist", "arrow", "afro", "apollo", "answer", "awesome", "anniversary", "writer"];
-wordsHard = ["aardvark", "aardvarks", "abacterial", "basil", "basin", "basinet", "basinets", "basins", "basketweaves", "basketwork", "basketworks", "basking", "basks", "compactifies", "compactify", "yo"];
-proverbs = ["A bad workman always blames his tools", "A bird in hand is worth two in the bush",
-    "A cat has nine lives", "Actions speak louder than words", "All good things come to an end"
-];
+wordsEasy = ["artist", "arrow", "afro", "apollo", "answer", "awesome", "writer", "baby", "door", "banana", "finger", "fence", "big", "swimming", "pool", "sun", "church", "yo yo", "boy", "bag", "alligator", "mouse", "birthday", "winter", "beach", "tree", "teacher", "king", "telephone", "eye", "water", "jelly", "balloon", "toothbrush", "pants", "mom", "body", "bike", "toilet", "paper", "baseball", "pig", "lawn", "mower", "fire", "school", "belt", "pajamas", "mud", "ice", "cream", "cone", "arm", "drums", "spider", "shark", "seashell", "computer", "grandma", "pillow", "kite", "homework", "ladybug", "bed", "bird", "gum", "book", "dress", "queen", "puppy", "happy", "doctor", "frog", "blanket", , "pen", "sandwich", "boat", "dad", "lunchbox", "ice", "bottle", "elbow", "penny", "broom", "dog", "rose", "picnic", "chair", "duck", "hair", "zoo", "party", "piano", "key", "apple", "chalk", "park", "clock", "pencil", "hill", "flag", "lollipop", "candle", "flower", 'basketball', "hug", "clown", 'mountain', 'nose', "cow", "grow", "grass", "rainbow", "pocket", "grape", "cowboy", "doll", "forehead", "football", "crayon", "desk", "TV", "bedtime", "dump", "truck", "cold", "paint", "ear", "moon"];
+wordsMedium = ["ping pong", "snowball", "roof", "fly", "fang", "bicycle", "bear", "cape", "puppet", "piano", "lipstick", "salute", "hula hoop", "penguin", "banana", "peel", "whisper", "popsicle", "Frankenstein", "earthquake", "yo yo", "road", "rain", "alarm", "clock", "dog leash", "chop", "pajamas", "slam", "dunk", "fiddle", "seashell", "jog", "seesaw", "nap", "cheerleader", "blind", "beg", "shopping", "cart", "limbo", "newspaper", "twist", "rhinoceros", "cow", "tickle", "fetch", "violin", "cage", "cello", "braid", "skateboard", "stairs", "trumpet", "mop", "shovel", "money", "soap", "saddle", " wink", "tree", "think"];
+wordsHard = ["abruptly", "absurd", "abyss", "affix", "askew", "avenue", "awkward", "axiom", "azure", "bagpipes", "bandwagon", "banjo", "bayou", "beekeeper", "bikini", "blitz", "blizzard", "boggle", "bookworm", "boxcar", "boxful", "buckaroo", "buffalo", "buffoon", "buxom", "buzzard", "buzzing", "buzzwords", "caliph", "cobweb", "cockiness", "croquet", "crypt", "curacao", "cycle", "daiquiri", "dirndl", "disavow", "dizzying", "duplex", "dwarves", "embezzle", "equip", "espionage", "euouae", "exodus", "faking", "fishhook", "fixable", "fjord", "flapjack", "flopping", "fluffiness", "flyby", "foxglove", "frazzled", "frizzled", "fuchsia", "funny", "gabby", "galaxy", "galvanize", "gazebo", "giaour", "gizmo", "glowworm", "glyph", "gnarly", "gnostic", "gossip", "grogginess", "haiku", "haphazard", "hyphen", "iatrogenic", "icebox", "injury", "ivory", "ivy", "jackpot", "jaundice", "jawbreaker", "jaywalk", "jazziest", "jazzy", "jelly", "jigsaw", "jinx", "jiujitsu", "jockey", "jogging", "joking", "jovial", "joyful", "juicy", "jukebox", "jumbo", "kayak", "kazoo", "keyhole", "khaki", "kilobyte", "kiosk", "kitsch", "kiwifruit", "klutz", "knapsack", "larynx", "lengths", "lucky", "luxury", "lymph", "marquis", "matrix", "megahertz", "microwave", "mnemonic", "mystify", "naphtha", "nightclub", "nowadays", "numbskull", "nymph", "onyx", "ovary", "oxidize", "oxygen", "pajama", "peekaboo", "phlegm", "pixel", "pizazz", "pneumonia", "polka", "pshaw", "psyche", "puppy", "puzzling", "quartz", "queue", "quips", "quixotic", "quiz", "quizzes", "quorum", "razzmatazz", "rhubarb", "rhythm", "rickshaw", "schnapps", "scratch", "shiv", "snazzy", "sphinx", "spritz", "squawk", "staff", "strength", "strengths", "stretch", "stronghold", "stymied", "subway", "swivel", "syndrome", "thriftless", "thumbscrew", "topaz", "transcript", "transgress", "transplant", "triphthong", "twelfth", "twelfths", "unknown", "unworthy", "unzip", "uptown", "vaporize", "vixen", "vodka", "voodoo", "vortex", "voyeurism", "walkway", "waltz", "wave", "wavy", "waxy", "wellspring", "wheezy", "whiskey", "whizzing", "whomever", "wimpy", "witchcraft", "wizard", "woozy", "wristwatch", "wyvern", "xylophone", "yachtsman", "yippee", "yoked", "youthful", "yummy", "zephyr", "zigzag", "zigzagging", "zilch", "zipper", "zodiac", "zombie"];
 
 // code taken from https://html-online.com/articles/get-url-parameters-javascript/
 function getUrlVars() {
@@ -47,11 +45,11 @@ wordsBank = [];
 if (playerChoice === 'easy') {
     wordsBank = wordsEasy;
 
+} else if (playerChoice === 'medium') {
+    wordsBank = wordsMedium;
+
 } else if (playerChoice === 'hard') {
     wordsBank = wordsHard;
-
-} else if (playerChoice === 'proverbs') {
-    wordsBank = proverbs;
 };
 
 
@@ -159,13 +157,13 @@ function checkLetter(num) {
     //fail - every missed letter one part of gibbet and person is drawn
     var drawOnCanvas = document.getElementById("draw-gibbet");
     var ctx = drawOnCanvas.getContext('2d');
-    
+
 
     if (incorrectTurns == 1) {
         ctx.lineWidth = 20;
         ctx.beginPath(); //vertical bar
         ctx.moveTo(50, 270);
-        ctx.lineTo(50, 25); 
+        ctx.lineTo(50, 25);
         ctx.stroke();
     }
 
@@ -174,7 +172,7 @@ function checkLetter(num) {
         ctx.beginPath(); //horizontal bar
         ctx.moveTo(29, 25);
         ctx.lineTo(175, 25);
-        ctx.stroke();    
+        ctx.stroke();
     }
 
     if (incorrectTurns == 3) {
