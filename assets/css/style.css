@@ -52,6 +52,12 @@ body {
     cursor: pointer;
 }
 
+#easy,
+#medium,
+#hard {
+    width: 190px;
+}
+
 .menu-button:hover {
     background-color: #565656
 }
