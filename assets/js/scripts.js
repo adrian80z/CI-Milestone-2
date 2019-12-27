@@ -131,6 +131,7 @@ function checkLetter(num) {
         document.getElementById(boxNumber).classList.add("correct");
         //update game state
         writeSentence();
+        document.getElementById(boxNumber).setAttribute("onclick", "null");
     } else {
         incorrectGuess.play();
         var boxNumber = "box" + num;
@@ -149,6 +150,7 @@ function checkLetter(num) {
 
     //win
     if (sentence == hiddenSentence) {
+        correctGuess.muted = true;
         winner.play();
         document.getElementById("message").style.display = "none";
         document.getElementById("alphabet").innerHTML = '<span class="win">Congratulations!!!<br/>Great Job!!!</span> <br/><br/><span class="reset menu-button inner" onclick="window.location.reload()">Play Again?</span><br /><span class="back-menu menu-button"><a href="index.html">Main Menu</a></span>';
@@ -157,13 +159,13 @@ function checkLetter(num) {
     //fail - every missed letter one part of gibbet and person is drawn
     var drawOnCanvas = document.getElementById("draw-gibbet");
     var ctx = drawOnCanvas.getContext('2d');
-
+    
 
     if (incorrectTurns == 1) {
         ctx.lineWidth = 20;
         ctx.beginPath(); //vertical bar
         ctx.moveTo(50, 270);
-        ctx.lineTo(50, 25);
+        ctx.lineTo(50, 25); 
         ctx.stroke();
     }
 
@@ -172,7 +174,7 @@ function checkLetter(num) {
         ctx.beginPath(); //horizontal bar
         ctx.moveTo(29, 25);
         ctx.lineTo(175, 25);
-        ctx.stroke();
+        ctx.stroke();    
     }
 
     if (incorrectTurns == 3) {
@@ -234,6 +236,7 @@ function checkLetter(num) {
     }
 
     if (incorrectTurns == 8) {
+        incorrectGuess.play();
         document.getElementById("message").innerHTML = "Your last chance!!!";
 
         ctx.lineWidth = 3;
@@ -262,7 +265,7 @@ function checkLetter(num) {
     }
 
     if (incorrectTurns == 9) {
-        incorrectGuess.pause();
+        incorrectGuess.muted = true;
         gameOver.play();
         document.getElementById("message").style.display = "none";
         document.getElementById("alphabet").innerHTML = '<span class="fail">Game Over!!!</span> <br/><span class="word"> Correct word is:</span><br/> ' + sentence + ' <br/><br/><span class="reset menu-button inner" onclick="window.location.reload()">Play Again?</span><br /><span class="back-menu menu-button"><a href="index.html">Main Menu</a></span>';
