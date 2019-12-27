@@ -6,7 +6,7 @@ This is the classic Hangman game where the player is given a word and has 9 chan
 
 ### Rules to play the game
 If you have not played the game before, here are the rules:
-- You will be provided with an unknown word, which has to be guessed.
+- Depends on your game dificulty selection (easy, medium, hard) you will be provided with a random, unknown word, which has to be guessed.
 - Select a letter of the alphabet, which you think might be present.
 - If the letter is present in the word, continue to guess the rest of the letters. 
 - If the letter isn't present in the word, one part a image of a gibbet is draw.
@@ -30,3 +30,9 @@ For the testing was used following tools:
 - **[JSLint](https://jslint.com/)** - a static code analysis tool used for checking if JavaScript source code complies with coding rules
 - **[CSS Validation](https://jigsaw.w3.org/css-validator/)** -service helps to check validity of Cascading Style Sheets (CSS).
 - **[Markup Validation](https://validator.w3.org/)** - helps check the validity of Web documents.
+
+All validation tests passed: no errors in the DevTools console. CSS, HTML and JavaScript have correct syntax as well (no errors found in files during online validation process).
+
+The game navigation is easy and consistent. All links are working and pointing to correct place.
+
+The project was tested across 4 browsers, Google Chrome, Mozilla Firefox, Edge, Opera. I used the Dev Tools in browsers to check for compatibility issues on mobile devices. The project looks consistent and responsive on modern smartphones. Project also has been tested on physical devices such as Galaxy A20e and HTC One S.
