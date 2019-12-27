@@ -1,7 +1,7 @@
 //vars declarations and initialization
 var wordsEasy = [];
 var wordsHard = [];
-var prowerbs = [];
+var wordsMedium = [];
 var playerChoice = "";
 var wordsBank = [];
 var getRandomSentence = 0;
@@ -42,13 +42,13 @@ playerChoice = getUrlVars()["id"];
 wordsBank = [];
 
 //selecting appropriate words array from button clicked choice and assign it to wordsBank array
-if (playerChoice === 'easy') {
+if (playerChoice === "easy") {
     wordsBank = wordsEasy;
 
-} else if (playerChoice === 'medium') {
+} else if (playerChoice === "medium") {
     wordsBank = wordsMedium;
 
-} else if (playerChoice === 'hard') {
+} else if (playerChoice === "hard") {
     wordsBank = wordsHard;
 };
 
@@ -95,7 +95,7 @@ function showGameBoard() {
         boxContent = boxContent + '<div class="letter" id="' + boxNumber + '" onclick="checkLetter(' + i + ')">' + alphabet[i] + '</div>';
         //break line after every seventh element
         if ((i + 1) % 7 == 0) {
-            boxContent = boxContent + '<br />';
+            boxContent = boxContent + "<br />";
         }
     }
 
@@ -156,7 +156,7 @@ function checkLetter(num) {
 
     //fail - every missed letter one part of gibbet and person is drawn
     var drawOnCanvas = document.getElementById("draw-gibbet");
-    var ctx = drawOnCanvas.getContext('2d');
+    var ctx = drawOnCanvas.getContext("2d");
 
 
     if (incorrectTurns == 1) {
@@ -298,7 +298,7 @@ function checkLetter(num) {
 //function drawing base line where gibbet will be drawn
 function drawBase() {
     var drawLine = document.getElementById("draw-gibbet");
-    var ctx = drawLine.getContext('2d');
+    var ctx = drawLine.getContext("2d");
 
     ctx.fillStyle = "transparent";
     ctx.lineWidth = 3;
