@@ -4,9 +4,18 @@ This is the classic Hangman game where the player is given a word and has 9 chan
 
 **Link to live version - [Hangman](https://adrian80z.github.io/CI-Milestone-2/)**
 
+### Rules to play the game
+If you have not played the game before, here are the rules:
+- You will be provided with an unknown word, which has to be guessed.
+- Select a letter of the alphabet, which you think might be present.
+- If the letter is present in the word, continue to guess the rest of the letters. 
+- If the letter isn't present in the word, one part a image of a gibbet is draw.
+- Player has 9 chances to guess the word.
+- Lost all chances will result in hang the man ;).
+
 ## Technologies used
 
-- **[JavaScript](https://en.wikipedia.org/wiki/JavaScript)** - used to program the behavior of Web pages
+- **[JavaScript](https://en.wikipedia.org/wiki/JavaScript)** - used to program the behavior of Web pages.
 - **[HTML5](https://en.wikipedia.org/wiki/HTML5)** - standard markup language for creating Web pages.
 - **[CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets#CSS_3)** - used to define styles for Web pages, including the design, layout and variations in display for different devices and screen sizes.
 - **[VS Code](https://code.visualstudio.com/)** - code editor redefined and optimized for building and debugging modern web and cloud applications.
@@ -18,6 +27,6 @@ This is the classic Hangman game where the player is given a word and has 9 chan
 
 For the testing was used following tools:
 - **[Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools)** - a set web authoring and debugging tools built into Google Chrome.
-- **[JSLint](https://jslint.com/)** - is a static code analysis tool used for checking if JavaScript source code complies with coding rules
+- **[JSLint](https://jslint.com/)** - a static code analysis tool used for checking if JavaScript source code complies with coding rules
 - **[CSS Validation](https://jigsaw.w3.org/css-validator/)** -service helps to check validity of Cascading Style Sheets (CSS).
 - **[Markup Validation](https://validator.w3.org/)** - helps check the validity of Web documents.
