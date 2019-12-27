@@ -36,3 +36,27 @@ All validation tests passed: no errors in the DevTools console. CSS, HTML and Ja
 The game navigation is easy and consistent. All links are working and pointing to correct place.
 
 The project was tested across 4 browsers, Google Chrome, Mozilla Firefox, Edge, Opera. I used the Dev Tools in browsers to check for compatibility issues on mobile devices. The project looks consistent and responsive on modern smartphones. Project also has been tested on physical devices such as Galaxy A20e and HTC One S.
+
+## Deployment
+The project was developed, committed to git and pushed to GitHub using Visual Studio Code IDE. 
+There are no differences between the deployed version and the development version.
+
+#### GitHub Pages
+This project was deployed to a hosting platform via GitHub Pages from the **_master branch_**.
+
+To achieve this the following steps were taken:
+1.	Go to the repository on GitHub: **https://github.com/adrian80z/CI-Milestone-2**
+2.	Go to Settings (last tab under the Project title).
+3.	Scroll and select GitHub Pages.
+4.	From the Source dropdown select the **_master branch_**.
+5.	The website being deployed and can be found at: **https://adrian80z.github.io/CI-Milestone-2/**
+
+#### Local
+To run this project locally:
+1.	Go to the repository on GitHub: **https://github.com/adrian80z/CI-Milestone-2**
+2.	Under the repository name, click "**_Clone or download_**".
+3.	In the **_Clone with HTTPS_** section, copy the URL for the repository.
+4.	In local IDE open Git Bash.
+5.	Change the working directory to the location where you want the cloned directory to be made.
+6.	Type `git clone`, and then paste the URL you copied in Step 3.
+7.	Press Enter. Local clone will be created.
