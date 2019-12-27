@@ -14,10 +14,7 @@ body {
     height: 100vh;
 }
 
-
-
 /* index page */
-
 #start {
     margin-top: 16vh;
 }
@@ -33,12 +30,6 @@ body {
 }
 
 .menu-box {
-    /* position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
-    /* min-width: 300px;
-    min-height: 500px; */
     text-align: center;
     padding: 30px;
 }
@@ -168,8 +159,15 @@ body {
 
 #refresh {
     position: absolute;
-    top: 0;
+    top: 6px;
     right: 76px;
+    cursor: pointer;
+}
+
+#home {
+    position: absolute;
+    top: 6px;
+    right: 130px;
     cursor: pointer;
 }
 
@@ -279,6 +277,12 @@ body {
         right: 25px;
     }
 
+    #home {
+        position: absolute;
+        top: 15px;
+        right: 80px;
+    }
+
     #sentence-board {
         padding-top: 15px;
     }
@@ -306,6 +310,22 @@ body {
     .letter {
         width: 20px;
     }
+
+    .modal-box {
+        padding-top: 60px;
+    }
+
+    .modal-content {
+        width: 80%;
+    }
+
+    .modal-header h2 {
+        font-size: 25px;
+    }
+
+    .modal-body {
+        font-size: 1.05em;
+    }
 }
 
 @media only screen and (min-width: 376px) and (max-width: 420px) {
@@ -318,6 +338,12 @@ body {
         position: absolute;
         top: 15px;
         right: 25px;
+    }
+
+    #home {
+        position: absolute;
+        top: 15px;
+        right: 80px;
     }
 
     #sentence-board {
@@ -341,6 +367,10 @@ body {
     .fail {
         font-size: 33px;
     }
+
+    .modal-box {
+        padding-top: 60px;
+    }
 }
 
 /* Tablets */
@@ -355,7 +385,7 @@ body {
         top: 25px;
         right: 30px;
         transform: scale(1.5);
-    }  
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
