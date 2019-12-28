@@ -38,17 +38,16 @@ The game navigation is easy and consistent.
 Index page has Start Game and How to Play menu buttons. 
 Clicking How to Play button cause that modal window appers with information about game. To close modal we can use either x symbol placed on top right corner above game title or click anywhere outside the modal.
 Clicking Start Game button cause that four other menu buttons appears (hidden by default) while those two (Start Game and How to Play) become hidden. Those are 3 difficulty game levels (easy, medium, hard) and back to Main Menu button. Clicking on that button cause that previous two are showed again and current level buttons are hidden.
-Clicking one of the three buttons (easy, medium, hard) moving player to gameboard.html page where the game begins. Each button is a link with apropriate parameter attached to url that passing user choice to script where apropriate function assign that parameter to 
-
-
+Clicking one of the three buttons (easy, medium, hard) moving player to gameboard.html page where the game begins. Each button is a link with apropriate parameter attached to url that passing user choice to script where apropriate function assign that parameter to words array.
+Content of gameboard.html page:
 Hyphens are displayed on the screen equal to the length of the word chosen randomly from a list. Player can guess a letter by clicking on one of the alphabet letters displayed on screen. If the letter is present in the word, the hyphens are replaced with the letter at the right position. If the letter occurs more than once in the word, each occurence of the letter is replaced for a correct guess. A letter can be guessed only once and for each wrong guess, the chances are decreased by 1 and gibbet image is drawn on the canvas part by part till all the nine chances are used up.
 
 #### Existing Features
 - Feedback on the screen how many turns left after inncorrect guess
 - Image is drew step-by-step on canvas element
 - Clicked letter change background color depends on correct/incorrect guess
-- Reload button 
-- Home button
+- Reload button - refresh page
+- Home button - pointing to Main Menu
 - Different sounds effects after clicking letter depends on correct/incorrect guess (or win/game over game)
 
 #### Features Left to Implement
@@ -85,24 +84,24 @@ Manual testing was performed by clicking every element on page which can be clic
 
 index.html page
 1. Click on Play Game button. Four buttons shows on screen (Easy, Medium, Hard and Main Menu). Current two are hide (Play Game, How To Play).
-1.1 Click on Easy button moves to gameboard.html page.
-1.2 Click on Medium button moves to gameboard. html page.
-1.3 Click on Hard button moves to gameboard.html page.
-1.4 Click to Main Menu button. Current four buttons are hide and previous two menu button are shown.
+ 1.1 Click on Easy button moves to gameboard.html page.
+ 1.2 Click on Medium button moves to gameboard. html page.
+ 1.3 Click on Hard button moves to gameboard.html page.
+ 1.4 Click to Main Menu button. Current four buttons are hide and previous two menu button are shown.
 2. Click on How to Play button - modal window appears on screen
-2.1 Click X letter on top right corner to close modal
-2.2 Click any were outside modal close it.
+ 2.1 Click X letter on top right corner to close modal
+ 2.2 Click any were outside modal close it.
 
 
 gameboard.html page
 1. Click on reload icon refresh page.
 2. Click on home icon moves to index.html
 3. Click on one of alphabet letters.
-- If letter is in guessed word - background is changed to green. Sound is played. Letter and every its occurrence  is revealed on guessing word.
--If letter is not in guessed word - background is changed to red. Sound is played. One part of gibbet is drown on canvas. Counter shows turns is decreased by one.
+ - If letter is in guessed word - background is changed to green. Sound is played. Letter and every its occurrence  is revealed on guessing word.
+ -If letter is not in guessed word - background is changed to red. Sound is played. One part of gibbet is drown on canvas. Counter shows turns is decreased by one.
 4. Win/Game Over menu buttons:
-4.1 Click Play Again. Reload page and game starts.
-4.2 Click Main Menu moves to index.html page.
+ 4.1 Click Play Again. Reload page and game starts.
+ 4.2 Click Main Menu moves to index.html page.
 
 All links are working and pointing to correct place. Functions performing correct actions also. Project looks and works well on different browsers and screen sizes.
 
