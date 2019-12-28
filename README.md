@@ -65,9 +65,17 @@ For the testing was used following tools:
 
 All validation tests passed: no errors in the DevTools console. CSS, HTML and JavaScript have correct syntax as well (no errors found in files during online validation process).
 
-The game navigation is easy and consistent. All links are working and pointing to correct place.
-
 The project was tested across 4 browsers, Google Chrome, Mozilla Firefox, Edge, Opera. I used the Dev Tools in browsers to check for compatibility issues on mobile devices. The project looks consistent and responsive on modern smartphones. Project also has been tested on physical devices such as Galaxy A20e and HTC One S.
+
+The game navigation is easy and consistent. Index page has Start Game and How to Play menu buttons. 
+Clicking How to Play button, modal window appers with information about game. To close modal we can use either x symbol placed on top right corner above game title or click anywhere outside the modal.
+
+Clicking Start Game button cause that four other menu buttons appears (hidden by default) while those two (Start Game and How to Play) become hidden. Those are 3 difficulty game levels and back to Main Menu button. Clicking on that button cause that previous two are reveal again and current level buttons are hidden.
+
+Clicking one of the three buttons (easy, medium, hard) moving player to gameboard.html page.
+
+
+All links are working and pointing to correct place. Functions performing correct actions as well.
 
 ## Deployment
 The project was developed, committed to git and pushed to GitHub using Visual Studio Code IDE. 
@@ -94,13 +102,13 @@ To run this project locally:
 7.	Press Enter. Local clone will be created.
 
 ## Credits
- -	I received inspiration for this project through internet research. I visited websites such as http://joereisigl.com/joereisigl2/nmix4110/finalProject/, https://codepen.io/cathydutton/pen/ldazc, http://cis-linux2.temple.edu:8080/sp17_3344_1_tue51138/Tutorial/hangmanIndex.html and watched few youtube tutorials, which helped me to put pieces together.
+ -	I received inspiration for this project through internet research. I visited websites such as http://joereisigl.com/joereisigl2/nmix4110/finalProject/, https://codepen.io/cathydutton/pen/ldazc, http://cis-linux2.temple.edu:8080/sp17_3344_1_tue51138/Tutorial/hangmanIndex.html and watched few youtube tutorials, which helped me to put all pieces together.
  
  ## Media
 - Background texture was created by myself using Photoshop. 
 - Home and reload icon were downloaded from https://icons8.com/icons/
 - The audio sounds used in this site were obtained from http://www.pachd.com/sounds.html
-- The game words was taken from the https://www.thegamegal.com/printables/ words
+- The game words was taken from the https://www.thegamegal.com/printables/
 
 ## Code
 -	Some of the JavaScript code was taken from the https://www.w3schools.com/
