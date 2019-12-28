@@ -18,7 +18,25 @@ If you have not played the game before, here are the rules:
 #### Game Interface
 Hyphens are displayed on the screen equal to the length of the word chosen randomly from a list. Player can guess a letter by clicking on one of the alphabet  letters displayed on screen. If the letter is present in the word, the blank spaces are replaced with the letter at the right position. If the letter occurs more than once in the word, each occurence of the letter is replaced for a correct guess. A letter can be guessed only once and for each wrong guess, the chances are decreased by 1 and gibbet image is drawn on the canvas part by part till all the nine chances are used up.
 
+#### User Stories
+- As user I want to have fun playing game
+- As a user I want to have choice between difficulty levels
+- As a user I want to have some general info about game rules
+
 #### Wireframes
+
+## Features
+
+#### Existing Features
+
+- Modal box with information about game
+- Feedback on the screen how many turns left after inncorrect guess
+- Image is drew step-by-step on canvas element
+- Clicked letter change background color depends on correct/incorrect guess
+- Reload button 
+- Home button
+- Different sounds effects after clicking letter depends on correct/incorrect guess (or win/game over game)
+
 
 ## Technologies used
 
