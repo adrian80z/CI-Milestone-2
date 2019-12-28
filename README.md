@@ -37,6 +37,13 @@ Hyphens are displayed on the screen equal to the length of the word chosen rando
 - Home button
 - Different sounds effects after clicking letter depends on correct/incorrect guess (or win/game over game)
 
+#### Features Left to Implement
+- Different categories
+- Hints
+- Multiplayer
+- Timer
+- Score points
+- Possibility to save results
 
 ## Technologies used
 
@@ -85,3 +92,17 @@ To run this project locally:
 5.	Change the working directory to the location where you want the cloned directory to be made.
 6.	Type `git clone`, and then paste the URL you copied in Step 3.
 7.	Press Enter. Local clone will be created.
+
+## Credits
+ -	I received inspiration for this project through internet research. I visited websites such as http://joereisigl.com/joereisigl2/nmix4110/finalProject/, https://codepen.io/cathydutton/pen/ldazc, http://cis-linux2.temple.edu:8080/sp17_3344_1_tue51138/Tutorial/hangmanIndex.html and watched few youtube tutorials, which helped me to put pieces together.
+ 
+ ## Media
+- Background texture was created by myself using Photoshop. 
+- Home and reload icon were downloaded from https://icons8.com/icons/
+- The audio sounds used in this site were obtained from http://www.pachd.com/sounds.html
+- The game words was taken from the https://www.thegamegal.com/printables/ words
+
+## Code
+-	Some of the JavaScript code was taken from the https://www.w3schools.com/
+Code was used to create modal window( script placed in body section in index.html) appearing on the Homepage. All css styles was created by myself except some styling parts for mentioned above modal window.
+- Part of the code for drawing hangman on canvas was taken from http://joereisigl.com/joereisigl2/nmix4110/finalProject/ and was modified to adjusted to needs.
