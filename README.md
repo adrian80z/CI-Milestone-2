@@ -1,17 +1,24 @@
 # Hangman Game
 
-This is the classic Hangman game where the player is given a word and has 9 chances to guess the word one letter at a time.
+This is the Hangman game where the player is given a word and has 9 chances to guess the word one letter at a time.
 
 **Link to live version - [Hangman](https://adrian80z.github.io/CI-Milestone-2/)**
 
-### Rules to play the game
+#### Rules to play the game
 If you have not played the game before, here are the rules:
 - Depends on your game dificulty selection (easy, medium, hard) you will be provided with a random, unknown word, which has to be guessed.
 - Select a letter of the alphabet, which you think might be present.
 - If the letter is present in the word, continue to guess the rest of the letters. 
-- If the letter isn't present in the word, one part a image of a gibbet is draw.
+- If the letter isn't present in the word, one part of a gibbet is draw.
 - Player has 9 chances to guess the word.
-- Lost all chances will result in hang the man ;).
+- Lost all chances will result in hanging the man ;).
+
+## UX
+
+#### Game Interface
+Hyphens are displayed on the screen equal to the length of the word chosen randomly from a list. Player can guess a letter by clicking on one of the alphabet  letters displayed on screen. If the letter is present in the word, the blank spaces are replaced with the letter at the right position. If the letter occurs more than once in the word, each occurence of the letter is replaced for a correct guess. A letter can be guessed only once and for each wrong guess, the chances are decreased by 1 and gibbet image is drawn on the canvas part by part till all the nine chances are used up.
+
+#### Wireframes
 
 ## Technologies used
 
